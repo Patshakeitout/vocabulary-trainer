@@ -11,9 +11,10 @@
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="nextVocabulary()">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -38,19 +39,23 @@
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">
-             Was bedeutet?
-             <h1>{WORT}?</h1>
+                <h5>Was bedeutet ...</h5>
+                <h1 id="word"></h1>
 
-             <form action="#">
-                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                    <input class="mdl-textfield__input" type="text" id="germanText">
-                    <label class="mdl-textfield__label" for="germanText">Deutsch...</label>
-                </div>
+                <form onsubmit="compare(); return false;">
+                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                        <input required class="mdl-textfield__input" type="text" id="germanText">
+                        <label class="mdl-textfield__label" for="germanText">Deutsch...</label>
+                    </div>
 
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-                    Hinzufügen
-                </button>
-            </form>
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                        Vergleichen
+                    </button>
+                </form>
+
+                <h2 id="text"></h2>
+                
+
             </div>
         </main>
     </div>

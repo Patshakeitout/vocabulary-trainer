@@ -11,9 +11,10 @@
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="render()">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
         <header class="mdl-layout__header">
             <div class="mdl-layout__header-row">
@@ -38,7 +39,7 @@
         </div>
         <main class="mdl-layout__content">
             <div class="page-content">   
-                <form action="#">
+                <form onsubmit="addVocabulary(); return false;">
                     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
                         <input class="mdl-textfield__input" type="text" id="germanText">
                         <label class="mdl-textfield__label" for="germanText">Deutsch...</label>
@@ -47,20 +48,18 @@
                         <input class="mdl-textfield__input" type="text" id="englishText">
                         <label class="mdl-textfield__label" for="englishText">Englisch...</label>
                     </div>                  
-                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+                    <button onclick="addVocabulary()" id="add" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
                         Hinzufügen
                     </button>
                 </form>
+
+                <ul id="vocabularyList">
+
+                </ul>
+
             </div>
         </main>
     </div>
-    
-    search
-    Title
-    Link
-    Link
-    Link
-    Link
 
 </body>
 
